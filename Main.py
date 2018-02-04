@@ -13,8 +13,8 @@ def read_file(file_name):
 
 
 def take_input():
-    support = input("Please enter the minimum support value in percentage: ")
-    confidence = input("Please enter the minimum confidence value in percentage: ")
+    support = int(input("Please enter the minimum Support value in percentage: "))
+    confidence = int(input("Please enter the minimum Confidence value in percentage: "))
     dataset = read_file("dataset_1.csv")
     return {'support': support, 'confidence': confidence, 'dataset': dataset}
 
@@ -26,7 +26,7 @@ def print_output(output):
 def __main__():
     user_input = take_input()
     apriori = Apriori()
-    output = apriori.run(user_input)
+    output = apriori.run(user_input['support'], user_input['confidence'], user_input['dataset'])
     print_output(output)
 
 
