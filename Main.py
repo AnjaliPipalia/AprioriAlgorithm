@@ -16,7 +16,8 @@ def take_input():
     support = int(input("Please enter the minimum Support value in percentage: "))
     confidence = int(input("Please enter the minimum Confidence value in percentage: "))
     dataset = read_file("dataset_1.csv")
-    return {'support': support, 'confidence': confidence, 'dataset': dataset}
+    items = read_file("items.csv")
+    return {'support': support, 'confidence': confidence, 'dataset': dataset, 'items': items}
 
 
 def print_output(output):
@@ -26,7 +27,7 @@ def print_output(output):
 def __main__():
     user_input = take_input()
     apriori = Apriori()
-    output = apriori.run(user_input['support'], user_input['confidence'], user_input['dataset'])
+    output = apriori.run(user_input['support'], user_input['confidence'], user_input['dataset'], user_input['items'])
     print_output(output)
 
 
