@@ -1,4 +1,4 @@
-A,C,D
-B,C,E
-A,B,C,E
-B,E
+Apple,Celery,Door
+Banana,Celery,Eggs
+Apple,Banana,Celery,Eggs
+Banana,Eggs
